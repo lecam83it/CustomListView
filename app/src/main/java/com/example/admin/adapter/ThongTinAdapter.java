@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,11 +22,11 @@ import java.util.List;
  * Created by Admin on 8/3/2017.
  */
 
-public class ThongTinAdapter extends ArrayAdapter<ThongTin> {
+public class ThongTinAdapter extends BaseAdapter {
 
     class ViewHolder{
-        TextView txtTen;
-        ImageView imgHinhAnh;
+        TextView txtName;
+        ImageView imgAvatar;
         public ViewHolder(){}
     }
     @NonNull
@@ -33,10 +34,24 @@ public class ThongTinAdapter extends ArrayAdapter<ThongTin> {
     @LayoutRes int resource;
     @NonNull List<ThongTin> objects;
     public ThongTinAdapter(@NonNull Activity context, @LayoutRes int resource, @NonNull List<ThongTin> objects) {
-        super(context, resource, objects);
         this.context = context;
         this.resource = resource;
         this.objects = objects;
+    }
+
+    @Override
+    public int getCount() {
+        return objects.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return objects.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
     }
 
     @NonNull
@@ -48,16 +63,16 @@ public class ThongTinAdapter extends ArrayAdapter<ThongTin> {
             holder = new ViewHolder();
             convertView = this.context.getLayoutInflater().inflate(this.resource, null);
 
-            holder.txtTen = (TextView) convertView.findViewById(R.id.txtTen);
-            holder.imgHinhAnh = (ImageView) convertView.findViewById(R.id.imgHinhAnh);
+            holder.txtName = (TextView) convertView.findViewById(R.id.txtName);
+            holder.imgAvatar = (ImageView) convertView.findViewById(R.id.imgAvatar);
 
             convertView.setTag(holder);
         } else {
            holder = (ViewHolder) convertView.getTag();
         }
-        ThongTin thongTin = getItem(position);
-        holder.imgHinhAnh.setImageResource(thongTin.getMaHinhAnh());
-        holder.txtTen.setText(thongTin.getName());
+        ThongTin thongTin = (ThongTin) getItem(position);
+        holder.imgAvatar.setImageResource(thongTin.getMaHinhAnh());
+        holder.txtName.setText(thongTin.getName());
         return  convertView;
     }
 }

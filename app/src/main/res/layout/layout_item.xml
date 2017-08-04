@@ -6,12 +6,12 @@
     android:background="#ddf6ebf9">
 
     <ImageView
-        android:id="@+id/imgHinhAnh"
+        android:id="@+id/imgAvatar"
         android:layout_width="@dimen/canh"
         android:layout_height="@dimen/canh" />
 
     <TextView
-        android:id="@+id/txtTen"
+        android:id="@+id/txtName"
         android:layout_width="match_parent"
         android:layout_height="@dimen/canh" />
 

@@ -11,9 +11,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<ThongTin> danhSach;
+    ArrayList<ThongTin> list;
     ThongTinAdapter adapter;
-    ListView lvDanhSach;
+    ListView lvList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void setControl() {
 
-        danhSach = new ArrayList<>();
-        danhSach.add(new ThongTin("Lê Cẩm", R.drawable.anh2));
-        danhSach.add(new ThongTin("Lê Văn Minh", R.drawable.anh1));
+        list = new ArrayList<>();
+        list.add(new ThongTin("Lê Cẩm", R.drawable.anh2));
+        list.add(new ThongTin("Lê Văn Minh", R.drawable.anh1));
 
-        adapter = new ThongTinAdapter(MainActivity.this, R.layout.layout_item, danhSach);
-        lvDanhSach = (ListView) findViewById(R.id.lvDanhSach);
-        lvDanhSach.setAdapter(adapter);
+        adapter = new ThongTinAdapter(MainActivity.this, R.layout.layout_item, list);
+        lvList = (ListView) findViewById(R.id.lvList);
+        lvList.setAdapter(adapter);
 
     }
 }

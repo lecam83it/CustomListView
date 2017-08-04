@@ -8,14 +8,14 @@ import java.io.Serializable;
 
 public class ThongTin implements Serializable{
     private String name;
-    private int maHinhAnh;
+    private int maAvatar;
 
     public ThongTin() {
     }
 
     public ThongTin(String name, int maHinhAnh) {
         this.name = name;
-        this.maHinhAnh = maHinhAnh;
+        this.maAvatar = maHinhAnh;
     }
 
     public String getName() {
@@ -27,11 +27,11 @@ public class ThongTin implements Serializable{
     }
 
     public int getMaHinhAnh() {
-        return maHinhAnh;
+        return maAvatar;
     }
 
     public void setMaHinhAnh(int maHinhAnh) {
-        this.maHinhAnh = maHinhAnh;
+        this.maAvatar = maHinhAnh;
     }
 
     @Override
