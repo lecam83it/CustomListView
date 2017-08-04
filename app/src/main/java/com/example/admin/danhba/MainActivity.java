@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         list = new ArrayList<>();
         list.add(new ThongTin("Lê Cẩm", R.drawable.anh2));
-        list.add(new ThongTin("Lê Văn Minh", R.drawable.anh1));
+        list.add(new ThongTin("Lê Minh", R.drawable.anh1));
 
         adapter = new ThongTinAdapter(MainActivity.this, R.layout.layout_item, list);
         lvList = (ListView) findViewById(R.id.lvList);
